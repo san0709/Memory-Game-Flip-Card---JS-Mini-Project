@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Game Flip Card</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>MEMORY GAME</h1>
-    <div id="cards-container">
-    </div>
-    <button id="shuffle-button" type="submit">Shuffle</button>
-    <script src="index.js"></script>
+    <div class="cards-container" id="cards-container">
+        <div class="card">
+            <div class="front">
+            </div>
+            <div class="back">
+            </div>
+        </div>
+        <button onclick="shuffleCards()">Reset</button>
+        <script src="script.js"></script>
 </body>
 
 </html>
