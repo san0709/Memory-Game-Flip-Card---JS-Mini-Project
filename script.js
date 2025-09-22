@@ -1,9 +1,11 @@
 const fruits = ["🍍", "🍌", "🥑", "🍒", "🍓", "🍎", "🍉", "🍇"];
 const cardsContainer = document.getElementById("cards-container");
 const btn = document.getElementById('btn');
+const msg = document.getElementById('message');
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
+let matchedPairs = 0;
 
 // Fisher-Yates shuffle algorithm
 function shuffleCards(array) {
@@ -13,7 +15,7 @@ function shuffleCards(array) {
     }
     return array;
 }
-
+//
 // Logic to check for a match
 function checkForMatch() {
     let isMatch = firstCard.dataset.value === secondCard.dataset.value;
@@ -24,9 +26,15 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    matchedPairs++;
+    checkWinCondition();
     resetBoard();
 }
-
+function checkWinCondition() {
+    if (matchedPairs === fruits.length) { // Check if all pairs are matched (8 pairs total)
+        msg.textContent = "You've Won!! 🎉";
+    }
+}
 // Unflip cards after a mismatch
 function unflipCards() {
     lockBoard = true;

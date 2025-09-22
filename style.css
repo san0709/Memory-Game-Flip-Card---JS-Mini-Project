@@ -63,8 +63,16 @@ body {
 }
 
 button {
+    background-color: rgb(2, 2, 55);
     padding: 8px 20px;
     font-size: 1.5em;
     font-family: Verdana;
     border-radius: 5px;
+    border: none;
+    color: #ffff;
+}
+
+#message {
+    color: #ffff;
+    font-size: 4em;
 }
