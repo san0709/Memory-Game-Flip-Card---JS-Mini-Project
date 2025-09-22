@@ -68,6 +68,7 @@ function flipCard() {
 
 // Generate the cards on the board
 function generateCards() {
+    msg.innerHTML = '';
     cardsContainer.innerHTML = '';
     let shuffledFruits = shuffleCards([...fruits, ...fruits]); // Shuffle a new doubled array each time
 
